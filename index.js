@@ -1,8 +1,11 @@
 const express = require('express')
+const cors = require('cors');
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
 app = express()
+
+app.use(cors())
 
 app.get('/assets/armormap.json', (req, res) => {
     res.sendFile(path.join(__dirname, '/assets/', 'armormap.json'));
